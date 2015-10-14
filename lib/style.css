@@ -47,12 +47,12 @@
 
 .markdown-textarea .markdown-textarea-editor {
   position: relative;
+  overflow: hidden;
   zoom: 1;
 }
 .markdown-textarea .markdown-textarea-editor textarea {
   float: left;
   border: none;
-  padding: 10px;
   width: 100%;
   min-height: 300px;
   outline: none;
@@ -61,22 +61,23 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 0;
-  background: rgba(0, 0, 0, 0.05);
-  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1) inset;
+  width: 50%;
+  background: rgba(60, 60, 60, 0.05);
+  box-shadow: 1px 0 0 rgba(60, 60, 60, 0.08) inset;
+  transform: translateX(100%);
 }
 .markdown-textarea .markdown-textarea-editor textarea,
 .markdown-textarea .markdown-textarea-preview-area {
+  padding: 10px;
   height: 100%;
   color: #454544;
   font: 400 18px/1.5 "Helvetica Neue", "Helvetica", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
   box-sizing: border-box;
   transition: all 250ms ease-in-out;
 }
-.markdown-textarea-preview-on .markdown-textarea-editor textarea,
-.markdown-textarea-preview-on .markdown-textarea-preview-area {
+.markdown-textarea-preview-on .markdown-textarea-editor textarea {
   width: 50%;
 }
 .markdown-textarea-preview-on .markdown-textarea-preview-area {
-  padding: 10px;
+  transform: translateX(0);
 }
