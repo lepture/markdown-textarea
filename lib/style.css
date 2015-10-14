@@ -3,10 +3,11 @@
   padding: 6px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  margin: 10px 0;
+  margin: 10px 0 0;
   zoom: 1;
 }
-.markdown-textarea .markdown-textarea-toolbar:after {
+.markdown-textarea .markdown-textarea-toolbar:after,
+.markdown-textarea .markdown-textarea-editor:after {
   display: table;
   content: '';
   clear: both;
@@ -39,16 +40,43 @@
   background: rgba(0, 0, 0, 0.1);
   border-radius: 2px;
 }
-.markdown-textarea button.markdown-textarea-ui-preview-on {
+.markdown-textarea-preview-on button.markdown-textarea-ui-preview {
   opacity: 1;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
 }
 
+.markdown-textarea .markdown-textarea-editor {
+  position: relative;
+  zoom: 1;
+}
 .markdown-textarea .markdown-textarea-editor textarea {
+  float: left;
   border: none;
-  color: #454544;
-  font: 400 18px/1.5 "Helvetica Neue", "Helvetica", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+  padding: 10px;
   width: 100%;
   min-height: 300px;
   outline: none;
+}
+.markdown-textarea .markdown-textarea-preview-area {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1) inset;
+}
+.markdown-textarea .markdown-textarea-editor textarea,
+.markdown-textarea .markdown-textarea-preview-area {
+  height: 100%;
+  color: #454544;
+  font: 400 18px/1.5 "Helvetica Neue", "Helvetica", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+  box-sizing: border-box;
+  transition: all 250ms ease-in-out;
+}
+.markdown-textarea-preview-on .markdown-textarea-editor textarea,
+.markdown-textarea-preview-on .markdown-textarea-preview-area {
+  width: 50%;
+}
+.markdown-textarea-preview-on .markdown-textarea-preview-area {
+  padding: 10px;
 }
