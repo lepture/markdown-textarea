@@ -3,54 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>Markdown Textarea</title>
+  <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="/build/markdown-textarea.css">
   <style>
     body {
       margin: 0;
       padding: 0;
     }
-    .editor-container {
-      float: left;
-      width: 50%;
+    .container {
+      padding: 60px;
     }
-    .preview-container {
-      float: right;
-      width: 50%;
-    }
-    .editor-container input {
-      padding: 6px 6px 6px 20px;
+    .editor-title input {
+      width: 100%;
+      padding: 6px;
       font-size: 24px;
       font-weight: bold;
       border: none;
       outline: none;
     }
-    .editor-container textarea {
-      width: 100%;
-      height: 600px;
-      box-sizing: border-box;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      resize: none;
-      padding: 6px 6px 6px 20px;
-      border-right: 1px solid #ddd;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="editor-container">
-      <div class="editor-title">
-        <input type="text" name="title" placeholder="Article Title">
-      </div>
-      <div class="tools">
-        <button>Bold</button>
-      </div>
-      <div class="editor-content">
-        <textarea name="content" placeholder="Write Here"></textarea>
-      </div>
+    <div class="editor-title">
+      <input type="text" name="title" placeholder="Article Title">
     </div>
-    <div class="preview-container">
+    <div class="editor-content">
+      <textarea name="content" placeholder="Write Here"></textarea>
     </div>
   </div>
+  <script src="http://localhost:9090/webpack-dev-server.js"></script>
+  <script src="/build/markdown-textarea.js"></script>
 </body>
 </html>

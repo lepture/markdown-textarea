@@ -4,7 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var postcssImport = require('postcss-import');
 
 var webpackPlugins = [
-  new ExtractTextPlugin("style.css", {disable: false})
+  new ExtractTextPlugin("markdown-textarea.css", {disable: false})
 ];
 
 var postcssPlugins = [
