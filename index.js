@@ -15,36 +15,32 @@ Textarea.prototype.constructor = Textarea;
 
 Textarea.prototype.focus = function() {
   this.element.focus();
+  return this;
 };
 
-Textarea.prototype.wrap = function(startText, placeholder, endText) {
+Textarea.prototype.wrap = function(startText, endText) {
   var cursor = this.cursor();
-  if (cursor[0] === cursor[1]) {
-    this.text(placeholder);
-    cursor = this.cursor();
-  }
   var cursorMove = startText.length;
   this.insertText(startText, cursor[0]);
   if (endText) {
     this.insertText(endText, cursor[1] + cursorMove);
   }
-  return this.cursor(cursor[0] + cursorMove, cursor[1] + cursorMove);
+  this.cursor(cursor[0] + cursorMove, cursor[1] + cursorMove);
+  return this;
 };
 
 Textarea.prototype.bold = function() {
   var sur = this.surround(2);
   if (sur[0] === sur[1] && sur[0] === '**') {
-    this.focus();
-    return this;
+    return this.focus();
   };
 
-  var text = this.langs.bold || 'Bold Text';
   sur = this.surround(1);
   if (sur[0] === sur[1] && sur[0] === '*') {
-    return this.wrap('*', text, '*');
+    return this.wrap('*', '*');
   }
 
-  return this.wrap('**', text, '**');
+  return this.wrap('**', '**');
 };
 
 Textarea.prototype.italic = function() {

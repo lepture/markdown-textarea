@@ -1,12 +1,8 @@
-var editor = require('./lib/')
+var Textarea = require('./');
 var el = document.querySelector('textarea');
-var marked = require('marked');
 
-editor.bind(el, {
-  preview: function(text, cb) {
-    cb(marked(text));
-  },
+window.editor = new Textarea(el, {
   upload: function(files, cb) {
-    cb({link: 'this-is-a-fake-link'});
+    cb({src: 'this-is-a-fake-link'});
   }
 });
